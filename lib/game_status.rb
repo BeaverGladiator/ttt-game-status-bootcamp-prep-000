@@ -17,8 +17,8 @@ WIN_COMBINATIONS = [
 
 def won?(board)
   WIN_COMBINATIONS.all? do |win_combination|
-    win_combination.any? do |win_position|
-     position_taken?(board, win_position) ||  board(win_position) == "X" || board(win_position) == "O"
+    win_combination.all? do |win_position|
+     position_taken?(board, win_position)
     end
   end
 end
